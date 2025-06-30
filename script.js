@@ -1,4 +1,5 @@
-// script.js function goHome() { document.querySelectorAll('.tool-section').forEach(s => s.classList.add('hidden')); }
+// script.js 
+function goHome() { document.querySelectorAll('.tool-section').forEach(s => s.classList.add('hidden')); }
 
 function navigateTo(id) { goHome(); document.getElementById(id).classList.remove('hidden'); }
 
