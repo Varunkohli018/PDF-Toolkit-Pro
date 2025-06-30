@@ -1,0 +1,68 @@
+<!-- index.html --><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Toolkit Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+</head>
+<body onload="loadMyFiles()">
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1>PDF Toolkit Pro</h1>
+  </header>  <main>
+    <section class="tool-grid">
+      <button onclick="navigateTo('textToPdf')">Text to PDF</button>
+      <button onclick="navigateTo('imageToPdf')">Image to PDF</button>
+      <button onclick="navigateTo('mergePdf')">Merge PDFs</button>
+      <button onclick="navigateTo('editPdf')">Edit PDF</button>
+      <button onclick="navigateTo('receiptMaker')">Receipt Maker</button>
+      <button onclick="navigateTo('myFiles')">My Files</button>
+    </section><section id="textToPdf" class="tool-section hidden">
+  <h2>Text to PDF</h2>
+  <textarea id="pdfText" placeholder="Write text here..."></textarea>
+  <button onclick="createTextPdf()">Create PDF</button>
+</section>
+
+<section id="imageToPdf" class="tool-section hidden">
+  <h2>Image to PDF</h2>
+  <input type="file" id="imageInput" accept="image/*" multiple>
+  <button onclick="createImagePdf()">Create PDF</button>
+</section>
+
+<section id="mergePdf" class="tool-section hidden">
+  <h2>Merge PDFs</h2>
+  <input type="file" id="mergeInput" accept="application/pdf" multiple>
+  <button onclick="mergeFiles()">Merge</button>
+</section>
+
+<section id="editPdf" class="tool-section hidden">
+  <h2>Edit PDF</h2>
+  <input type="file" id="editPdfInput" accept="application/pdf">
+  <textarea id="editText" placeholder="Enter text to add..."></textarea>
+  <button onclick="editPdf()">Save</button>
+</section>
+
+<section id="receiptMaker" class="tool-section hidden">
+  <h2>Receipt Maker</h2>
+  <input type="text" id="r_date" placeholder="Date">
+  <input type="text" id="r_name" placeholder="Customer Name">
+  <input type="text" id="r_item" placeholder="Item Description">
+  <input type="number" id="r_qty" placeholder="Quantity">
+  <input type="number" id="r_price" placeholder="Price per Item">
+  <button onclick="createReceiptPdf()">Create Receipt</button>
+</section>
+
+<section id="myFiles" class="tool-section hidden">
+  <h2>My Files</h2>
+  <ul id="fileList"></ul>
+</section>
+
+  </main>  <footer>
+    <button onclick="goHome()">🏠 Home</button>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
